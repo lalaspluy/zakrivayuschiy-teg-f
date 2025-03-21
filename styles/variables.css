@@ -1,1 +1,32 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  /*Шрифт*/
+  --main-font: "Inter-Variable";
+  --accent-font: "Press Start 2P";
+  --content-weight: 400;
+  --title-weight: 700;
+  --main-font-size: 18px;
+  --accent-font-size: 14px;
+  --text-line-height: 21px;
+  --logo-font-size: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
+  --h1-font-size: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
+
+  /*Цвет и фон*/
+  --bg-image: url("../images/background.png");
+  --bg-color: #fff;
+  --text-color: #000;
+  --border-color: #000;
+  
+  /*Размеры header*/
+  --header-padding-block: clamp(7.5rem, 7.324rem + 0.75vw, 8rem);
+  --content-width: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);
+
+  /*Высота image*/
+  
+  /*  --main-title-color: #db00ff;
+  --accent-color: #ff0070;
+  --decor-color: #ff0070;
+  --text-accent-color: #ff0070;
+  --accent-contrast-color: #000028;
+  --color-shadow: #ff007066;*/
+}
