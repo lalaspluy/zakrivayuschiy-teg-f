@@ -124,7 +124,7 @@
 }
 
 .img-grayscale-invert {
-  filter: grayscale(1) invert(1);
+  filter: grayscale(0.4) invert(0.2);
 }
 /****************************************************************/
 
@@ -315,6 +315,7 @@ button:focus-visible {
 
   .card__image-text {
     right: 13px;
+    top: 23px;
   }
 
   .button-save {
