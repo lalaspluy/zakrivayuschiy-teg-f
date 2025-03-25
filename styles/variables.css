@@ -3,8 +3,8 @@
   /*Шрифт*/
   --main-font: "Inter-Variable";
   --accent-font: "Press Start 2P";
-  --content-weight: 400;
-  --title-weight: 700;
+  --content-font-weight: 400;
+  --title-font-weight: 700;
   --main-font-size: 18px;
   --accent-font-size: 14px;
   --text-line-height: 21px;

@@ -25,7 +25,10 @@
   margin-inline: auto;
   margin-block-start: 100px;
   max-inline-size: 700px;
-  inline-size: var(--content-width);
+  inline-size: var(
+    --content-width,
+    clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem)
+  );
 }
 
 .header {
@@ -34,20 +37,23 @@
   place-content: center;
   gap: 20px;
   border: 2px solid #000;
-  padding-block: var(--header-padding-block);
+  padding-block: var(
+    --header-padding-block,
+    clamp(7.5rem, 7.324rem + 0.75vw, 8rem)
+  );
   font-family: var(--accent-font), fantasy;
   background-color: var(--bg-color, #fff);
 }
 
 .logo {
-  font-size: var(--logo-font-size);
+  font-size: var(--logo-font-size, clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem));
   line-height: 100%;
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .title {
-  font-size: var(--h1-font-size);
+  font-size: var(--h1-font-size, clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem));
   line-height: 100%;
   text-transform: uppercase;
 }
@@ -71,10 +77,9 @@
 }
 
 .card__title {
-  padding: 3px 24px 3px 10px;
+  padding: 4px 24px 6px 10px;
   font-size: var(--main-font-size, 18px);
-  line-height: 25px;
-  font-variation-settings: "wght" var(--title-weight, 700);
+  font-variation-settings: "wght" var(--title-font-weight, 700);
 }
 
 .card__image-block {
@@ -90,44 +95,36 @@
 }
 
 /********************Фильтры***********************/
-.img-sepia {
-  filter: sepia(1);
-}
-
-.img-contrast-brightness-grayscale {
-  filter: contrast(160%) brightness(180%) grayscale(0.8);
-}
-
-.img-brightness {
-  filter: brightness(180%);
+.img-hue-brightness-blur {
+  filter: hue-rotate(60deg) brightness(0.5) blur(1px);
 }
 
 .img-sepia-brightness {
-  filter: sepia(90%) brightness(150%);
+  filter: sepia(0.8) brightness(0.6);
 }
 
 .img-hue-rotate {
   filter: hue-rotate(-40deg);
 }
 
-.img-saturate {
-  filter: saturate(140%);
-}
-
-.img-sepia-contrast {
-  filter: sepia(0.8) contrast(1.2);
+.img-grayscale {
+  filter: grayscale(0.8);
 }
 
 .img-sepia-hue {
   filter: sepia(0.6) hue-rotate(-50deg);
 }
 
-.img-grayscale {
-  filter: grayscale(0.8);
+.img-grayscale-brightness {
+  filter: grayscale(80%) brightness(0.8);
 }
 
 .img-blur {
   filter: blur(0.1rem);
+}
+
+.img-grayscale-invert {
+  filter: grayscale(1) invert(1);
 }
 /****************************************************************/
 
@@ -145,7 +142,7 @@
 }
 
 @supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
-  .card__picture-text {
+  .card__image-text {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--contarst-color, #fff);
     text-stroke: 1px var(--contarst-color, #fff);
@@ -160,7 +157,7 @@
 
 .card__text {
   font-size: var(--main-font-size, 18px);
-  letter-spacing: 0.5px;
+  line-height: 21px;
 }
 
 .card__buttons-wrap {
@@ -252,8 +249,7 @@ button:focus-visible {
 
 /*************Dialog*****************/
 .dialog-save {
-  position: fixed;
-  inset: 0;
+  border-width: 2px;
   padding: 28px;
   transition: opacity 0.6s ease-in-out;
   inline-size: 353px;
@@ -281,7 +277,7 @@ button:focus-visible {
   font-size: var(--accent-font-size, 14px);
 }
 
-.dialog-label {
+.dialog-text {
   line-height: 150%;
   text-align: left;
   text-transform: uppercase;
@@ -311,6 +307,14 @@ button:focus-visible {
   .content-width {
     max-inline-size: 100%;
     inline-size: 100%;
+  }
+
+  .card__title {
+    padding: 4px 10px 6px 10px;
+  }
+
+  .card__image-text {
+    right: 13px;
   }
 
   .button-save {
